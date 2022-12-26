@@ -1,5 +1,5 @@
 import React from 'react'
-import Navbar from '../Navbar'
+import Navbar from '../GlobalComponents/Navbar'
 import bg1 from '../../Images/Bg/slider_bg_001.jpg'
 
 import courses_bg from '../../Images/Bg/courses_bg.png'
@@ -7,7 +7,7 @@ import shop_bg from '../../Images/Bg/shop_bg.jpg'
 
 import Courses from './Courses'
 import About from './About'
-import Footer from './Footer'
+import Footer from '../GlobalComponents/Footer'
 import OurShop from './OurShop'
 import StudentReviews from './StudentReviews'
 import Advisers from './Advisers'
@@ -46,7 +46,7 @@ const Home = () => {
       <section className='h-max px-10 py-20'>
         <Advisers />
       </section>
-      <section className='h-max py-20 px-10' style={{ backgroundImage: `url(${shop_bg})` }}>
+      <section className='h-max py-20 px-10' style={{ backgroundImage: `url(${shop_bg})`, backgroundRepeat: "repeat", backgroundPosition: 'left ', backgroundSize: "cover" }}>
         <OurShop />
       </section>
       <section className='h-max bg-[#f6f6f6] px-10 py-20'>

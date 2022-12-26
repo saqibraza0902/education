@@ -1,6 +1,6 @@
 import React from 'react'
-import Footer from './HomeComponents/Footer'
-import Navbar from './Navbar'
+import Footer from './GlobalComponents/Footer'
+import Navbar from './GlobalComponents/Navbar'
 import courses_bg from '../Images/Bg/others_bg.jpg'
 import { BsClock, BsArrowRight } from 'react-icons/bs'
 import events from '../Images/Bg/courses_bg.png'

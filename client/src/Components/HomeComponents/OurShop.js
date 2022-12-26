@@ -1,41 +1,25 @@
-import React from 'react'
-import course1 from '../../Images/ShopThumb/shopthumb001.jpg'
-import course2 from '../../Images/ShopThumb/shopthumb002.jpg'
-import course3 from '../../Images/ShopThumb/shopthumb003.jpg'
-import course4 from '../../Images/ShopThumb/shopthumb004.jpg'
+import React, { useEffect } from 'react'
 import { RatingStar } from "rating-star";
-const books = [
-    {
-        image: course1,
-        title: "Graphic Design Book",
-        writer: "Robert Cool",
-        price: 49.99,
-        rating: 80
-    },
-    {
-        image: course2,
-        title: "Graphic Design Book",
-        writer: "Robert Cool",
-        price: 49.99,
-        rating: 90
-    },
-    {
-        image: course3,
-        title: "Graphic Design Book",
-        writer: "Robert Cool",
-        price: 49.99,
-        rating: 30
-    },
-    {
-        image: course4,
-        title: "Graphic Design Book",
-        writer: "Robert Cool",
-        price: 49.99,
-        rating: 50
-    }
-]
-
+import api from '../../AxiosInstance/api'
+import { useDispatch, useSelector } from 'react-redux'
+import { FeedBookActions } from '../../Redux/Actions/Actions'
+import { Link } from 'react-router-dom';
 const OurShop = () => {
+    const dispatch = useDispatch()
+    const AllBooks = useSelector(state => state.book.feedBooks)
+    console.log(AllBooks)
+    useEffect(() => {
+        const getBooks = async () => {
+            try {
+                const { data } = await api.get("/book/feed-books")
+                console.log(data)
+                dispatch(FeedBookActions(data))
+            } catch (error) {
+                console.log(error)
+            }
+        }
+        getBooks()
+    }, [dispatch])
     return (
         <div className='h-max '>
             <div className='flex items-center flex-col w-full text-white'>
@@ -43,8 +27,8 @@ const OurShop = () => {
                 <p className='text-center leading-8'>Belis nisl adipiscing sapien sed malesu diame lacus eget erat Cras mollis <br></br>scelerisqu Nullam arcu liquam here was consequat.</p>
             </div>
             <div className='grid mt-5 grid-cols-1 justify-items-center gap-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'>
-                {books.map((item, index) => (
-                    <div className='mx-2' key={index}>
+                {AllBooks?.map((item) => (
+                    <div className='mx-2'>
                         <div className='w-max pr-4 bg-white py-4 '>
                             <img src={item.image} alt='' />
                             <div className='mx-3 my-2 '>
@@ -63,6 +47,15 @@ const OurShop = () => {
                         </div>
                     </div>
                 ))}
+
+            </div>
+            <div className='font-semibold flex justify-center
+                mt-14'>
+                <button className='theme-btn1 relative z-1 hover:-translate-y-2 '>
+                    <span className='bg-yellow-300 px-5 py-3 uppercase  text-xs font-semibold transition'>
+                        <Link to="/shop" className='text-decoration-none text-black'> View More</Link>
+                    </span>
+                </button>
             </div>
         </div>
     )

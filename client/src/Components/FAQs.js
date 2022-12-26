@@ -1,6 +1,6 @@
 import React from 'react'
-import Navbar from './Navbar'
-import Footer from './HomeComponents/Footer'
+import Navbar from './GlobalComponents/Navbar'
+import Footer from './GlobalComponents/Footer'
 import courses_bg from '../Images/Bg/others_bg.jpg'
 import { HiOutlineQuestionMarkCircle } from 'react-icons/hi'
 const QuestionsArray = [

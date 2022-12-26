@@ -8,11 +8,14 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import reportWebVitals from './reportWebVitals';
 import 'flowbite';
-
+import store from "./Redux/Store/Store"
+import { Provider } from 'react-redux'
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <App />
+    </Provider>
   </React.StrictMode>
 );
 reportWebVitals();

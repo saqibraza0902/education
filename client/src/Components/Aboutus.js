@@ -1,6 +1,6 @@
 import React from 'react'
-import Navbar from './Navbar'
-import Footer from './HomeComponents/Footer'
+import Navbar from './GlobalComponents/Navbar'
+import Footer from './GlobalComponents/Footer'
 import courses_bg from '../Images/Bg/others_bg.jpg'
 import about_1 from '../Images/About/about_details_left_img.jpg'
 import about_2 from '../Images/About/about_details_right_img.jpg'
@@ -38,7 +38,7 @@ const Aboutus = () => {
                 backgroundPosition: 'center center ', backgroundSize: "cover", backgroundRepeat: "no-repeat"
             }}>
             </section>
-            
+
             <section>
                 <Footer />
             </section>

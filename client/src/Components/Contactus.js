@@ -1,7 +1,7 @@
 import React from 'react'
 import courses_bg from '../Images/Bg/others_bg.jpg'
-import Footer from './HomeComponents/Footer'
-import Navbar from './Navbar'
+import Footer from './GlobalComponents/Footer'
+import Navbar from './GlobalComponents/Navbar'
 import { GiHeadphones } from 'react-icons/gi'
 import { GoMail } from 'react-icons/go'
 import { IoLocationOutline } from 'react-icons/io5'
@@ -74,7 +74,7 @@ const Contactus = () => {
 
             </section>
             <section className=''>
-                <iframe className='w-full lg:w-[1280px] ' width="" height="450" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387190.2799198932!2d-74.25987701513004!3d40.69767006272707!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2s!4v1671604581936!5m2!1sen!2s"  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe title='map' className='w-full lg:w-[1280px] ' width="" height="450" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387190.2799198932!2d-74.25987701513004!3d40.69767006272707!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2s!4v1671604581936!5m2!1sen!2s" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </section>
             <section>
                 <Footer />
