@@ -37,7 +37,7 @@ const Advisers = () => {
             </div>
             <div className='grid mt-5 grid-cols-1 md:grid-cols-2 justify-items-center gap-5 lg:gap-0 lg:grid-cols-4'>
                 {advisersList.map((person, index) => (
-                    <div className='relative bg-[#fdc800] hover:bg-[#002147] group overflow-hidden rounded-md w-fit' key={index}>
+                    <div data-aos="zoom-in-up" data-aos-duration="1000" className='relative bg-[#fdc800] hover:bg-[#002147] group overflow-hidden rounded-md w-fit' key={index}>
                         <div className='bg-white mb-[2px] rounded-md'>
                             <img src={person.image} alt='' />
                             <div className='flex flex-col items-center py-3'>

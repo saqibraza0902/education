@@ -16,7 +16,7 @@ const BookDetails = () => {
     const dispatch = useDispatch()
     const AllBooks = useSelector(state => state.book.feedBooks)
     const [count, setCount] = useState(0)
-    const { _id, title, writer, price, desc, rating, image } = location.state.item
+    const { title, writer, price, desc, rating, image } = location.state.item
 
     useEffect(() => {
         const getBooks = async () => {

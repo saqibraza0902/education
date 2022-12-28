@@ -13,6 +13,7 @@ require('./db/connection');
 app.use(express.json())
 
 app.use('/book', require('./Routes/BookRoute'))
+app.use('/events', require('./Routes/EventsRoutes'))
 const PORT = process.env.PORT
 
 app.listen(PORT, () => {

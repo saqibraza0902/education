@@ -12,24 +12,19 @@ const BooksCtrl = {
             const page = parseInt(req.query.page || 0);
             const total = await Book.countDocuments({});
             const book = await Book.find().sort({ _id: -1 }).limit(PAGE_SIZE).skip(PAGE_SIZE * page)
-
-            console.log(total)
             const totalPage = Math.ceil(total / PAGE_SIZE)
             return res.status(200).send({ book, totalPage })
-            // return res.json({ totalPage: totalPage })
-
         } catch (error) {
-            console.log(error)
+            return res.status(500).json({ error })
         }
     },
     getFeedBooks: async (req, res) => {
         try {
 
             const book = await Book.find().sort({ _id: -1 }).limit(4)
-            console.log(book)
             return res.send(book)
         } catch (error) {
-            console.log(error)
+            return res.status(500).json({ error })
         }
     },
 
@@ -50,7 +45,7 @@ const BooksCtrl = {
                 return res.status(200).json({ message: "Book Posted" })
             })
         } catch (error) {
-            console.log(error)
+            return res.status(500).json({error})
         }
     }
 }

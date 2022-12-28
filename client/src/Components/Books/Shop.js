@@ -70,7 +70,7 @@ const Shop = () => {
                 <div className="flex justify-center mt-9">
                     <ul className='flex cursor-pointer text-[#8a8a8a]'>
                         {pages.map((pageIndex) => (
-                            <li className='px-4 py-2 border' onClick={() => setPageNumber(pageIndex)}>{pageIndex + 1}</li>
+                            <li className={`px-4 py-2 border ${pageNumber === pageIndex ? "bg-[#cdcdcd] font-semibold" : ""}`} onClick={() => setPageNumber(pageIndex)}>{pageIndex + 1}</li>
                         ))}
                     </ul>
                 </div>

@@ -65,11 +65,11 @@ const Courses = () => {
               <h1 className='font-semibold text-4xl'>Our Latest Courses</h1>
               <p className='leading-8'>Belis nisl adipiscing sapien sed malesu diame lacus eget erat  Cras mollis scelerisqu <br></br>Nullam arcu liquam here was consequat.</p>
           </div>
-          <div className='text-white  mt-5'>
+          <div className='text-white  mt-5' >
               <Slider {...settings} >
                   
                   {coursesList.map((item, index) => (
-                      <div className=' w-full  flex gap-3 bg-white border-r' key={index}>
+                      <div className=' w-full  flex gap-3 bg-white border-r' key={index} data-aos="flip-left">
                         
                           <img className='w-full' src={item.thumbnail} alt='Course #1' />
                           <div className='px-4 flex flex-col py-3 border-b gap-1 text-black'>

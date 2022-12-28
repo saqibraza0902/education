@@ -82,7 +82,7 @@ const StudentReviews = () => {
             <div className='my-16'>
                 <Slider {...settings} >
                     {review.map((item, index) => (
-                        <div className='flex px-2 gap-36 w-full' key={index}>
+                        <div className='flex px-2 gap-36 w-full' key={index} data-aos="zoom-out-left">
                             <div className='grid'>
                                 <p className='text-sm lg:w-4/5 leading-6 text-justify text-[#8a8a8a]'>{item.text}</p>
                                 <div className='flex'>

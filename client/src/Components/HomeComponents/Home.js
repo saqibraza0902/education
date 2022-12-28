@@ -24,7 +24,7 @@ const Home = () => {
           backgroundImage: `url(${bg1})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat',
           backgroundPosition: 'center'
         }}>
-        <div className=' text-white'>
+        <div className=' text-white' data-aos="fade-left">
           <h1 className='text-[25px] font-semibold md:w-4/6 md:text-6xl'>
             No Nation Can Prosper in Life Without Education
           </h1>
@@ -37,7 +37,7 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <section className='h-max w-full bg-[#f5f4f4] px-10 py-20 '>
+      <section className='h-max w-full bg-[#f5f4f4] px-10 py-20 ' data-aos="flip-left">
         <About />
       </section>
       <section className='h-max px-10 py-20' style={{ backgroundImage: `url(${courses_bg})` }}>

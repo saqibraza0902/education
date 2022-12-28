@@ -10,3 +10,10 @@ export const FeedBookActions = (books) => {
         payload: books
     }
 }
+
+export const EventsActions = (events) => {
+    return {
+        type: 'EVENTS',
+        payload: events
+    }
+}

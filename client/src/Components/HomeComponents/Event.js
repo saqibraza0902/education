@@ -67,7 +67,7 @@ const Event = () => {
             </div>
             <div className='grid mt-5 grid-cols-1 md:grid-cols-2 justify-items-center lg:grid-cols-3 gap-4'>
                 {eventArray.map((item, index) => (
-                    <div className='border-[#ffffff] rounded border-[1px] p-4 ' key={index}>
+                    <div data-aos="zoom-in" className='border-[#ffffff] rounded border-[1px] p-4 ' key={index}>
                         <div className='flex'>
                             <div className='bg-[#fdc800] h-max flex flex-col w-max rounded-md p-2'>
                                 <span className='text-center font-semibold text-lg lg:text-2xl'>{item.date}</span>

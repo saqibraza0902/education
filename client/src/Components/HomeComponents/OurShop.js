@@ -28,7 +28,7 @@ const OurShop = () => {
             </div>
             <div className='grid mt-5 grid-cols-1 justify-items-center gap-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'>
                 {AllBooks?.map((item) => (
-                    <div className='mx-2'>
+                    <div className='mx-2' data-aos="flip-right">
                         <div className='w-max pr-4 bg-white py-4 '>
                             <img src={item.image} alt='' />
                             <div className='mx-3 my-2 '>

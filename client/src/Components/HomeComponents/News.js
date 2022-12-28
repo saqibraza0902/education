@@ -32,7 +32,7 @@ const News = () => {
             </div>
             <div className='grid mt-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 py-5'>
                 {newsArray.map((list, index) => (
-                    <div className='w-fit relative bg-white' key={index}>
+                    <div className='w-fit relative bg-white' key={index} data-aos="zoom-in">
                         <img className='w-full' src={list.thumbnail} alt="Thumbnail" />
                         <div className='flex w-fit flex-col gap-2 py-3 pl-10 pr-1'>
                             <button className='bg-[#fdc800] uppercase text-sm text-black hover:!text-white hover:bg-[#002147] transition duration-500 px-3 py-2 rounded font-medium absolute top-3 right-3'>News</button>

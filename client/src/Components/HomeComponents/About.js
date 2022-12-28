@@ -20,8 +20,8 @@ const About = () => {
                     <img src={about_right} className='h-[85%] w-[85%] lg:h-auto lg:w-auto' alt='About' />
                 </div>
             </div>
-            <div className='w-full grid grid-cols-1 sm:grid-cols-2 md:flex gap-5 mt-5'>
-                <div className='w-full h-max py-4 px-4 bg-white border-l-4 border-[#fdc800]'>
+            <div className='w-full grid grid-cols-1 sm:grid-cols-2 md:flex gap-5 mt-5' data-aos="flip-up">
+                <div className='w-full h-max py-4 px-4 bg-white border-l-4 border-[#fdc800]' >
                     <div className='flex justify-between items-center'>
                         <h3 className='font-semibold text-sm lg:text-base'>Scholarship Facility</h3>
                         <span className='font-semibold text-base lg:text-2xl text-[#e2e2e2]'>01</span>
