@@ -6,7 +6,7 @@ import Shop from './Components/Books/Shop'
 import Events from './Components/Events/Events'
 import Aboutus from './Components/Aboutus'
 import Contactus from './Components/Contactus'
-import FAQs from './Components/FAQs'
+import FAQs from './Components/FAQS/FAQs'
 import BookDetails from './Components/Books/BookDetails'
 
 const App = () => {

@@ -1,8 +1,9 @@
 import React from 'react'
-import Navbar from './GlobalComponents/Navbar'
-import Footer from './GlobalComponents/Footer'
-import courses_bg from '../Images/Bg/others_bg.jpg'
+import Navbar from '../GlobalComponents/Navbar'
+import Footer from '../GlobalComponents/Footer'
+import courses_bg from '../../Images/Bg/others_bg.jpg'
 import { HiOutlineQuestionMarkCircle } from 'react-icons/hi'
+import Accordion from './Accordion'
 const QuestionsArray = [
     {
         ques: "How all this mistaken idea of denouncing pleasure and praising pain?",
@@ -50,24 +51,10 @@ const FAQs = () => {
                     <h2 className='text-[#444444] text-2xl lg:text-3xl font-semibold'>Frequently Ask Questions :</h2>
                     <p className='text-justify lg:w-7/12 text-[#666666] text-sm my-4 leading-8'>Will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happi nesso one rejects.</p>
                 </div>
-                {QuestionsArray.map((item) => (
-                    <div className="accordion" id="accordionExample">
-                        <div className=" bg-white lg:w-1/2 py-3">
-                            <h2 className="accordion-header mb-0" id="headingOne">
-                                <button className="text-justify relative flex items-center font-normal w-full text-base text-gray-800 bg-white rounded-none transition focus:outline-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                    <i className='text-[#666666] mr-3'><HiOutlineQuestionMarkCircle /></i>
-                                    {item.ques}
-                                </button>
-                            </h2>
-                            <div id="collapseOne" className="accordion-collapse collapse show" aria-labelledby="headingOne"
-                                data-bs-parent="#accordionExample">
-                                <div className="accordion-body text-[#8a8a8a] text-sm text-justify">
-                                    {item.ans}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                ))}
+                {QuestionsArray.map((item, index) => {
+                    const id = item
+                    return <Accordion key={index} {...item} />
+                })}
             </section>
             <section className='p-10 flex items-center flex-col'>
                 <h1 className='text-center font-bold text-xl lg:text-3xl text-[#444444]'>Do You Have Any Questions</h1>
