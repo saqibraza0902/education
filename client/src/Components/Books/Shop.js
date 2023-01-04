@@ -6,7 +6,7 @@ import courses_bg from '../../Images/Bg/others_bg.jpg'
 import api from '../../AxiosInstance/api'
 import { useDispatch, useSelector } from 'react-redux'
 import { BookActions } from '../../Redux/Actions/Actions'
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 const Shop = () => {
     const navigate = useNavigate()
@@ -26,10 +26,15 @@ const Shop = () => {
             }
         }
         getBooks()
-    }, [dispatch, pageNumber])
+        navigate(`/shop/${pageNumber + 1}`)
+    }, [dispatch, pageNumber, navigate])
     const toDetailComponent = (title, item) => {
-        navigate(`/book/${title}`, { state: { item } })
+        navigate(`/book/${pageNumber + 1}/${title}`, { state: { item } })
     }
+    const handlePageNum = (pageIndex) => {
+        setPageNumber(pageIndex)
+    }
+    
     return (
         <div>
             <Navbar />
@@ -70,7 +75,7 @@ const Shop = () => {
                 <div className="flex justify-center mt-9">
                     <ul className='flex cursor-pointer text-[#8a8a8a]'>
                         {pages.map((pageIndex) => (
-                            <li className={`px-4 py-2 border ${pageNumber === pageIndex ? "bg-[#cdcdcd] font-semibold" : ""}`} onClick={() => setPageNumber(pageIndex)}>{pageIndex + 1}</li>
+                            <li className={`px-4 py-2 border ${pageNumber === pageIndex ? "bg-[#cdcdcd] font-semibold" : ""}`} onClick={() => handlePageNum(pageIndex)}>{pageIndex + 1}</li>
                         ))}
                     </ul>
                 </div>

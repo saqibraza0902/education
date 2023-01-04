@@ -55,7 +55,7 @@ const Navbar = () => {
                     <ul className='flex flex-row gap-5 m-0 text-[#444444] uppercase text-sm font-semibold'>
                         <li><Link className='text-decoration-none text-black' to="/">Home</Link></li>
                         <li><Link className='text-decoration-none text-black' to="/courses">Courses</Link></li>
-                        <li><Link className='text-decoration-none text-black' to="/shop">Shop</Link></li>
+                        <li><Link className='text-decoration-none text-black' to="/shop/:index">Shop</Link></li>
                         <li><Link className='text-decoration-none text-black' to="/events">Events</Link></li>
                         <li><Link className='text-decoration-none text-black' to="/about">About Us</Link></li>
                         <li><Link className='text-decoration-none text-black' to="/contact">Contact Us</Link></li>

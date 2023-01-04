@@ -30,7 +30,7 @@ const News = () => {
                 <h2 className='text-[#002147] font-semibold'>Latest News</h2>
                 <p className='text-center leading-8 text-[#8a8a8a]'>Belis nisl adipiscing sapien sed malesu diame lacus eget erat Cras mollis <br></br>scelerisqu Nullam arcu liquam here was consequat.</p>
             </div>
-            <div className='grid mt-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 py-5'>
+            <div className='grid mt-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 py-5' data-aos="zoom-in-down">
                 {newsArray.map((list, index) => (
                     <div className='w-fit relative bg-white' key={index} data-aos="zoom-in">
                         <img className='w-full' src={list.thumbnail} alt="Thumbnail" />

@@ -14,6 +14,7 @@ app.use(express.json())
 
 app.use('/book', require('./Routes/BookRoute'))
 app.use('/events', require('./Routes/EventsRoutes'))
+app.use('/faqs', require('./Routes/FaqsRoutes'))
 const PORT = process.env.PORT
 
 app.listen(PORT, () => {

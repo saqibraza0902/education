@@ -28,7 +28,7 @@ const Footer = () => {
                     <span className='text-sm'>Enter your email and get latest updates and offers subscribe us</span>
                 </div>
                 <form className='flex items-center'>
-                    <input className='outline-none border-none h-10 w-72 rounded text-sm ps-3' placeholder='Enter your email ' />
+                    <input className='outline-none border-none bg-white h-10 w-72 rounded text-sm ps-3' placeholder='Enter your email ' />
                 </form>
             </div>
             <div className=' bg-[#002147]'>

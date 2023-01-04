@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Navbar from '../GlobalComponents/Navbar'
 import Footer from '../GlobalComponents/Footer'
 import courses_bg from '../../Images/Bg/others_bg.jpg'
-import { HiOutlineQuestionMarkCircle } from 'react-icons/hi'
 import Accordion from './Accordion'
+import api from '../../AxiosInstance/api'
 const QuestionsArray = [
     {
         ques: "How all this mistaken idea of denouncing pleasure and praising pain?",
@@ -35,6 +35,26 @@ const QuestionsArray = [
     }
 ]
 const FAQs = () => {
+    const [name, setName] = useState("")
+    const [email, setEmail] = useState("")
+    const [message, setMessage] = useState("")
+
+    const handleSubmit = async (e) => {
+        e.preventDefault()
+
+        try {
+            const { data } = await api.post(`/faqs/post-faqs`, { name, email, message })
+
+            console.log(data)
+            if (data.status === 1) {
+                setName('');
+                setEmail('');
+                setMessage('')
+            }
+        } catch (error) {
+            console.log(error)
+        }
+    }
     return (
         <div>
             <Navbar />
@@ -52,19 +72,19 @@ const FAQs = () => {
                     <p className='text-justify lg:w-7/12 text-[#666666] text-sm my-4 leading-8'>Will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happi nesso one rejects.</p>
                 </div>
                 {QuestionsArray.map((item, index) => {
-                    const id = item
                     return <Accordion key={index} {...item} />
                 })}
             </section>
             <section className='p-10 flex items-center flex-col'>
                 <h1 className='text-center font-bold text-xl lg:text-3xl text-[#444444]'>Do You Have Any Questions</h1>
-                <form className='flex flex-col items-center gap-5 lg:w-1/2 mt-5'>
+                <form onSubmit={(e) => handleSubmit(e)} className='flex flex-col items-center gap-5 lg:w-1/2 mt-5'>
                     <div className='flex flex-col lg:flex-row gap-5 w-full'>
-                        <input className='w-full h-12 pl-4' placeholder='Name :' />
-                        <input className='w-full h-12 pl-4' placeholder='Email :' />
+                        <input className='w-full h-12 pl-4' value={name} onChange={(e) => setName(e.target.value)} placeholder='Name :' />
+                        <input className='w-full h-12 pl-4' value={email} onChange={(e) => setEmail(e.target.value)} placeholder='Email :' />
                     </div>
-                    <textarea rows={5} className='w-full pl-4' placeholder='Message :'></textarea>
-                    <button className='uppercase px-20 font-semibold py-3 bg-[#002147] text-white hover:!text-[#002147] transition-all duration-500 hover:bg-[#fdc800] w-max'>Submit Now</button>
+
+                    <textarea rows={5} className='w-full pl-4' value={message} onChange={(e) => setMessage(e.target.value)} placeholder='Message :'></textarea>
+                    <button type='submit' className='uppercase px-20 font-semibold py-3 bg-[#002147] text-white hover:!text-[#002147] transition-all duration-500 hover:bg-[#fdc800] w-max'>Submit Now</button>
                 </form>
             </section>
             <section>

@@ -26,7 +26,7 @@ const OurShop = () => {
                 <h2 className='font-semibold text-white text-4xl'>Our Shop</h2>
                 <p className='text-center leading-8'>Belis nisl adipiscing sapien sed malesu diame lacus eget erat Cras mollis <br></br>scelerisqu Nullam arcu liquam here was consequat.</p>
             </div>
-            <div className='grid mt-5 grid-cols-1 justify-items-center gap-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'>
+            <div className='grid mt-5 grid-cols-1 justify-items-center gap-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4' data-aos="zoom-in">
                 {AllBooks?.map((item) => (
                     <div className='mx-2' data-aos="flip-right">
                         <div className='w-max pr-4 bg-white py-4 '>
