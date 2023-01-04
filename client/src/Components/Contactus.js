@@ -81,11 +81,11 @@ const Contactus = () => {
 
                         <form onSubmit={(e)=>handleSubmit(e)} className='flex flex-col gap-5 mt-5 items-center lg:items-start'>
                             <div className='flex flex-col w-full lg:flex-row gap-5'>
-                                <input className='w-full h-12 pl-4' value={name} onChange={(e) => setName(e.target.value)} placeholder='Name :' />
-                                <input className='w-full h-12 pl-4' value={email} onChange={(e) => setEmail(e.target.value)} placeholder='Email :' />
+                                <input className='w-full h-12 pl-4 outline-none focus:!outline-none' value={name} onChange={(e) => setName(e.target.value)} placeholder='Name :' />
+                                <input className='w-full h-12 pl-4 outline-none focus:!outline-none' value={email} onChange={(e) => setEmail(e.target.value)} placeholder='Email :' />
                             </div>
 
-                            <textarea rows={5} className='w-full pl-4' value={message} onChange={(e) => setMessage(e.target.value)} placeholder='Message :'></textarea>
+                            <textarea rows={5} className='w-full pl-4 focus:border-current focus:ring-0 focus:!outline-none !outline-none' value={message} onChange={(e) => setMessage(e.target.value)} placeholder='Message :'></textarea>
                             <button type='submit' className='uppercase px-20 font-semibold py-3 bg-[#fdc800] w-max'>Submit Now</button>
                         </form>
                     </div>

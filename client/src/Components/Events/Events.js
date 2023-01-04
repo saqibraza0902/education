@@ -7,6 +7,7 @@ import events from '../../Images/Bg/courses_bg.png'
 import { useDispatch, useSelector } from 'react-redux'
 import api from '../../AxiosInstance/api'
 import { EventsActions } from '../../Redux/Actions/Actions'
+import { useNavigate } from 'react-router-dom'
 // const eventArray = [
 //     {
 //         date: '24',
@@ -92,11 +93,11 @@ import { EventsActions } from '../../Redux/Actions/Actions'
 // ]
 const Events = () => {
     const dispatch = useDispatch()
+    const navigate = useNavigate()
     const eventArray = useSelector(state => state.event.events)
     const [pageNumber, setPageNumber] = useState(0)
     const [totalNumOfPages, setTotalNumOfPages] = useState(0)
     const pages = new Array(totalNumOfPages).fill(null).map((v, i) => i)
-    console.log(eventArray)
     useEffect(() => {
         const getEvents = async () => {
             try {
@@ -109,6 +110,10 @@ const Events = () => {
         }
         getEvents()
     }, [dispatch, pageNumber])
+
+    const toDetailComponent = (_id, item) => {
+        navigate(`/events/${_id}`, { state: { item } })
+    }
     return (
         <div>
             <Navbar />
@@ -130,11 +135,11 @@ const Events = () => {
                                     <span className='text-xs'>{item.month}</span>
                                 </div>
                                 <div className='grid ml-5'>
-                                    <p className='text-white font-semibold text-lg hover:!text-[#fdc800] transition duration-500'>{item.eventTitle}</p>
+                                    <p onClick={() => toDetailComponent(item._id, item)} className='text-white cursor-pointer font-semibold text-lg hover:!text-[#fdc800] transition duration-500'>{item.eventTitle}</p>
                                     <span className='flex items-center gap-3 text-[#8a8a8a] text-sm'><i className='text-[#fdc800]'><BsClock /></i>{item.StartTime} - {item.EndTime}</span>
                                 </div>
                             </div>
-                            <p className='text-[#ddd] text-base my-3'>{item.detail}</p>
+                            <span className='text-[#ddd] whitespace-nowrap max-w-xs overflow-hidden inline-block text-ellipsis text-base my-3' >{item.detail}</span>
                             <div className='text-[#8a8a8a]'>
                                 <span className='font-light'>Speaker :</span>
                                 <span className='font-normal '> {item.speaker}</span>
@@ -149,8 +154,8 @@ const Events = () => {
                 </div> */}
                 <div className="flex justify-center mt-9">
                     <ul className='flex cursor-pointer text-[#8a8a8a]'>
-                        {pages.map((pageIndex) => (
-                            <li className={`px-4 py-2 border ${pageIndex === pageNumber ? "bg-[#ffffff] text-[#000000] font-semibold":""}`} onClick={() => setPageNumber(pageIndex)}>{pageIndex + 1}</li>
+                        {pages.map((pageIndex, index) => (
+                            <li key={index} className={`px-4 py-2 border ${pageIndex === pageNumber ? "bg-[#ffffff] text-[#000000] font-semibold":""}`} onClick={() => setPageNumber(pageIndex)}>{pageIndex + 1}</li>
                         ))}
                     </ul>
                 </div>

@@ -37,7 +37,7 @@ const News = () => {
                         <div className='flex w-fit flex-col gap-2 py-3 pl-10 pr-1'>
                             <button className='bg-[#fdc800] uppercase text-sm text-black hover:!text-white hover:bg-[#002147] transition duration-500 px-3 py-2 rounded font-medium absolute top-3 right-3'>News</button>
                             <span className='text-[#b9b9b9] text-sm font-semibold'>{list.date}</span>
-                            <span className='text-lg  fonts text-[#002147] hover:text-[#fdc800] transition duration-500 cursor-pointer'>{list.title}</span>
+                            <span className='text-lg text-[#002147] hover:text-[#fdc800] transition duration-500 cursor-pointer'>{list.title}</span>
                             <span className='text-sm text-[#8a8a8a] '>{list.text}</span>
                             <span className='cursor-pointer text-[#002147] hover:text-[#fdc800] transition duration-500 font-semibold'>Read more</span>
                         </div>

@@ -8,6 +8,6 @@ const EventSchema = mongoose.Schema({
     StartTime: { type: String, required: true },
     EndTime: { type: String, required: true },
     detail: { type: String, required: true },
+    image: { type: String, required: true },
 })
-const Events = mongoose.model('event', EventSchema);
-module.exports = Events;
+module.exports = Events = mongoose.model('event', EventSchema)

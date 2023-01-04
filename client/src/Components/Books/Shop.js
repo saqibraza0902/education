@@ -28,8 +28,8 @@ const Shop = () => {
         getBooks()
         navigate(`/shop/${pageNumber + 1}`)
     }, [dispatch, pageNumber, navigate])
-    const toDetailComponent = (title, item) => {
-        navigate(`/book/${pageNumber + 1}/${title}`, { state: { item } })
+    const toDetailComponent = (_id, item) => {
+        navigate(`/book/${pageNumber + 1}/${_id}`, { state: { item } })
     }
     const handlePageNum = (pageIndex) => {
         setPageNumber(pageIndex)
@@ -50,7 +50,7 @@ const Shop = () => {
                 <div>
                     <div className='grid mt-5 grid-cols-1 justify-items-center gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'>
                         {AllShopBooks?.map((item, index) => (
-                            <div className='mx-2' key={index} onClick={() => toDetailComponent(item.title, item)}>
+                            <div className='mx-2' key={index} onClick={() => toDetailComponent(item._id, item)}>
                                 <div className='w-max pr-4 bg-white py-4 '>
                                     <img src={item.image} alt='' />
                                     <div className='mx-3 my-2 '>
@@ -74,8 +74,8 @@ const Shop = () => {
 
                 <div className="flex justify-center mt-9">
                     <ul className='flex cursor-pointer text-[#8a8a8a]'>
-                        {pages.map((pageIndex) => (
-                            <li className={`px-4 py-2 border ${pageNumber === pageIndex ? "bg-[#cdcdcd] font-semibold" : ""}`} onClick={() => handlePageNum(pageIndex)}>{pageIndex + 1}</li>
+                        {pages.map((pageIndex, index) => (
+                            <li key={index} className={`px-4 py-2 border ${pageNumber === pageIndex ? "bg-[#cdcdcd] font-semibold" : ""}`} onClick={() => handlePageNum(pageIndex)}>{pageIndex + 1}</li>
                         ))}
                     </ul>
                 </div>

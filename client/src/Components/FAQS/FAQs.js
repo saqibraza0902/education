@@ -75,15 +75,15 @@ const FAQs = () => {
                     return <Accordion key={index} {...item} />
                 })}
             </section>
-            <section className='p-10 flex items-center flex-col'>
+            <section className='p-10 flex items-center flex-col bg-[#f6f6f6]'>
                 <h1 className='text-center font-bold text-xl lg:text-3xl text-[#444444]'>Do You Have Any Questions</h1>
                 <form onSubmit={(e) => handleSubmit(e)} className='flex flex-col items-center gap-5 lg:w-1/2 mt-5'>
                     <div className='flex flex-col lg:flex-row gap-5 w-full'>
-                        <input className='w-full h-12 pl-4' value={name} onChange={(e) => setName(e.target.value)} placeholder='Name :' />
-                        <input className='w-full h-12 pl-4' value={email} onChange={(e) => setEmail(e.target.value)} placeholder='Email :' />
+                        <input className='w-full h-12 pl-4 outline-none focus:!outline-none focus:border-current focus:ring-0' value={name} onChange={(e) => setName(e.target.value)} placeholder='Name :' />
+                        <input className='w-full h-12 pl-4 outline-none focus:!outline-none' value={email} onChange={(e) => setEmail(e.target.value)} placeholder='Email :' />
                     </div>
 
-                    <textarea rows={5} className='w-full pl-4' value={message} onChange={(e) => setMessage(e.target.value)} placeholder='Message :'></textarea>
+                    <textarea rows={5} className='w-full pl-4 focus:border-current focus:ring-0 focus:!outline-none !outline-none' value={message} onChange={(e) => setMessage(e.target.value)} placeholder='Message :'></textarea>
                     <button type='submit' className='uppercase px-20 font-semibold py-3 bg-[#002147] text-white hover:!text-[#002147] transition-all duration-500 hover:bg-[#fdc800] w-max'>Submit Now</button>
                 </form>
             </section>
