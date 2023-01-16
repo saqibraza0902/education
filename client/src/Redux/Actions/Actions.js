@@ -17,3 +17,9 @@ export const EventsActions = (events) => {
         payload: events
     }
 }
+export const CoursesActions = (courses) => {
+    return {
+        type: 'COURSES',
+        payload: courses
+    }
+}

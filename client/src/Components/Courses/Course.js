@@ -1,17 +1,20 @@
-import React from 'react'
-import Footer from './GlobalComponents/Footer'
-import Navbar from './GlobalComponents/Navbar'
+import React, { useEffect } from 'react'
+import Footer from '../GlobalComponents/Footer'
+import Navbar from '../GlobalComponents/Navbar'
 import { BsPerson } from 'react-icons/bs'
-import courses_bg from '../Images/Bg/others_bg.jpg'
-import course_1 from '../Images/Courses/single_courses_thumb_01.jpg'
-import course_2 from '../Images/Courses/single_courses_thumb_02.jpg'
-import course_3 from '../Images/Courses/single_courses_thumb_03.jpg'
-import course_4 from '../Images/Courses/single_courses_thumb_04.jpg'
-import course_5 from '../Images/Courses/single_courses_thumb_05.jpg'
-import course_6 from '../Images/Courses/single_courses_thumb_06.jpg'
-import course_7 from '../Images/Courses/single_courses_thumb_07.jpg'
-import course_8 from '../Images/Courses/single_courses_thumb_08.jpg'
-import course_9 from '../Images/Courses/single_courses_thumb_09.jpg'
+import courses_bg from '../../Images/Banners/others_bg.jpg'
+import course_1 from '../../Images/Courses/single_courses_thumb_01.jpg'
+import course_2 from '../../Images/Courses/single_courses_thumb_02.jpg'
+import course_3 from '../../Images/Courses/single_courses_thumb_03.jpg'
+import course_4 from '../../Images/Courses/single_courses_thumb_04.jpg'
+import course_5 from '../../Images/Courses/single_courses_thumb_05.jpg'
+import course_6 from '../../Images/Courses/single_courses_thumb_06.jpg'
+import course_7 from '../../Images/Courses/single_courses_thumb_07.jpg'
+import course_8 from '../../Images/Courses/single_courses_thumb_08.jpg'
+import course_9 from '../../Images/Courses/single_courses_thumb_09.jpg'
+import api from '../../AxiosInstance/api'
+import { useDispatch, useSelector } from 'react-redux'
+import { CoursesActions } from '../../Redux/Actions/Actions'
 const coursesList = [
     {
         title: "Business Studies",
@@ -78,6 +81,19 @@ const coursesList = [
     }
 ]
 const Course = () => {
+    const dispatch = useDispatch()
+    const allCoursesList = useSelector(state => state.course.courses)
+
+    console.log(allCoursesList)
+
+    useEffect(() => {
+        const getCourse = async () => {
+            const { data } = await api.get('/courses/get-course')
+            console.log(data)
+            dispatch(CoursesActions(data.course))
+        }
+        getCourse()
+    }, [])
     return (
         <div>
             <Navbar />
@@ -91,14 +107,14 @@ const Course = () => {
             </section>
             <section className='px-10 py-20 bg-[#f6f6f6]'>
                 <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
-                    {coursesList.map((item, index) => (
+                    {allCoursesList?.map((item, index) => (
                         <div className=' w-full sm:w-full bg-white' key={index}>
-                            <img className='w-full' src={item.thumbnail} alt='Course #1' />
+                            <img className='w-full' src={item.image} alt='Course #1' />
                             <div className='px-4 flex flex-col py-3 border-b gap-1 text-black'>
-                                <button className='bg-[#fdc800] font-sans px-3 py-2 rounded-sm transition w-fit text-xs font-medium
+                                <button className='bg-[#fdc800] font-sans px-3 py-2 rounded-sm transition duration-500 w-fit text-xs font-medium
                                  text-[#002147] uppercase hover:bg-[#002147] hover:text-white'>{item.category}</button>
-                                <span className='text-xl font-semibold font-sans'>{item.title}</span>
-                                <span className='text-[#8a8a8a] text-sm'>{item.descriptiom}</span>
+                                <span className='text-xl font-semibold font-sans'>{item.courseTitle}</span>
+                                <span className='text-[#8a8a8a] text-sm text-justify ie11Support'>{item.description}</span>
                             </div>
                             <div className=' flex justify-between  py-2 px-3'>
                                 <div className='flex items-center gap-2'>

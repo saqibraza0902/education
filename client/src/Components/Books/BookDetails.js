@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Footer from '../GlobalComponents/Footer'
 import Navbar from '../GlobalComponents/Navbar'
-import courses_bg from '../../Images/Bg/others_bg.jpg'
+import courses_bg from '../../Images/Banners/others_bg.jpg'
 import { useLocation } from 'react-router-dom'
 import { RatingStar } from "rating-star";
 import { AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai'

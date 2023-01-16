@@ -1,9 +1,9 @@
 import React from 'react'
 import Navbar from '../GlobalComponents/Navbar'
-import bg1 from '../../Images/Bg/slider_bg_001.jpg'
+import bg1 from '../../Images/Banners/slider_bg_001.jpg'
 
-import courses_bg from '../../Images/Bg/courses_bg.png'
-import shop_bg from '../../Images/Bg/shop_bg.jpg'
+import courses_bg from '../../Images/Banners/courses_bg.png'
+import shop_bg from '../../Images/Banners/shop_bg.jpg'
 
 import Courses from './Courses'
 import About from './About'

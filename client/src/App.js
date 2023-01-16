@@ -1,7 +1,7 @@
 import React from 'react'
 import Home from './Components/HomeComponents/Home'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import Course from './Components/Course'
+import Course from './Components/Courses/Course'
 import Shop from './Components/Books/Shop'
 import Events from './Components/Events/Events'
 import Aboutus from './Components/Aboutus'

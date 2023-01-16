@@ -1,10 +1,10 @@
 import React from 'react'
 import Navbar from './GlobalComponents/Navbar'
 import Footer from './GlobalComponents/Footer'
-import courses_bg from '../Images/Bg/others_bg.jpg'
+import courses_bg from '../Images/Banners/others_bg.jpg'
 import about_1 from '../Images/About/about_details_left_img.jpg'
 import about_2 from '../Images/About/about_details_right_img.jpg'
-import university from '../Images/Bg/university.jpg'
+import university from '../Images/Banners/university.jpg'
 const Aboutus = () => {
     return (
         <div>

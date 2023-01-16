@@ -6,7 +6,7 @@ import { TiSocialTwitter, TiSocialGooglePlus } from 'react-icons/ti'
 import { AiOutlineDribbble } from 'react-icons/ai'
 import { FaPinterestP } from 'react-icons/fa'
 import { BsCart2 } from 'react-icons/bs'
-import logo from '../../Images/logo/logo.png'
+import logo from '../../Images/Logo/logo.png'
 import { Link } from 'react-router-dom'
 
 const Navbar = () => {

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Footer from '../GlobalComponents/Footer'
 import Navbar from '../GlobalComponents/Navbar'
 import { RatingStar } from "rating-star";
-import courses_bg from '../../Images/Bg/others_bg.jpg'
+import courses_bg from '../../Images/Banners/others_bg.jpg'
 import api from '../../AxiosInstance/api'
 import { useDispatch, useSelector } from 'react-redux'
 import { BookActions } from '../../Redux/Actions/Actions'

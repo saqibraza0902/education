@@ -1,11 +1,11 @@
 import React from 'react'
 import Slider from "react-slick";
-import p_image from '../../Images/testimonilas_author_thumb1.png'
+import p_image from '../../Images/Thumbnails/testimonilas_author_thumb1.png'
 import CountUp from 'react-countup';
-import counter1 from '../../Images/logo/counter_icon1.png'
-import counter2 from '../../Images/logo/counter_icon2.png'
-import counter3 from '../../Images/logo/counter_icon3.png'
-import counter4 from '../../Images/logo/counter_icon4.png'
+import counter1 from '../../Images/Logo/counter_icon1.png'
+import counter2 from '../../Images/Logo/counter_icon2.png'
+import counter3 from '../../Images/Logo/counter_icon3.png'
+import counter4 from '../../Images/Logo/counter_icon4.png'
 const review = [
     {
         pfp: p_image,

@@ -1,5 +1,5 @@
 import React from 'react'
-import footerLogo from '../../Images/logo/logo_2.png'
+import footerLogo from '../../Images/Logo/logo_2.png'
 import { GrFacebookOption } from 'react-icons/gr'
 import { TiSocialTwitter, TiSocialGooglePlus } from 'react-icons/ti'
 import { FaPinterestP } from 'react-icons/fa'
@@ -7,11 +7,11 @@ import { BsHeadphones } from 'react-icons/bs'
 import { AiOutlineDribbble } from 'react-icons/ai'
 import { GoMail } from 'react-icons/go'
 import { IoLocationOutline } from 'react-icons/io5'
-import brand1 from '../../Images/logo/brand1.png'
-import brand2 from '../../Images/logo/brand2.png'
-import brand3 from '../../Images/logo/brand3.png'
-import brand4 from '../../Images/logo/brand4.png'
-import brand5 from '../../Images/logo/brand5.png'
+import brand1 from '../../Images/Logo/brand1.png'
+import brand2 from '../../Images/Logo/brand2.png'
+import brand3 from '../../Images/Logo/brand3.png'
+import brand4 from '../../Images/Logo/brand4.png'
+import brand5 from '../../Images/Logo/brand5.png'
 const Footer = () => {
     return (
         <div className='relative'>

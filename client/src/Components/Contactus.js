@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import courses_bg from '../Images/Bg/others_bg.jpg'
+import courses_bg from '../Images/Banners/others_bg.jpg'
 import Footer from './GlobalComponents/Footer'
 import Navbar from './GlobalComponents/Navbar'
 import { GiHeadphones } from 'react-icons/gi'
