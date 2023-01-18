@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Footer from '../GlobalComponents/Footer'
 import Navbar from '../GlobalComponents/Navbar'
 import courses_bg from '../../Images/Banners/others_bg.jpg'
-import { useLocation } from 'react-router-dom'
+import { Link, useLocation, useParams } from 'react-router-dom'
 import { RatingStar } from "rating-star";
 import { AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai'
 import { useDispatch, useSelector } from 'react-redux'
@@ -17,7 +17,9 @@ const BookDetails = () => {
     const AllBooks = useSelector(state => state.book.feedBooks)
     const [count, setCount] = useState(0)
     const { title, writer, price, desc, rating, image } = location.state.item
-
+    const { index } = useParams()
+    
+    console.log(index)
     useEffect(() => {
         const getBooks = async () => {
             try {
@@ -31,7 +33,11 @@ const BookDetails = () => {
         getBooks()
     }, [dispatch])
     const toDetailComponent = (title, item) => {
-        navigate(`/book/${title}`, { state: { item } })
+        navigate(`/shop/${title}`, { state: { item } })
+    }
+    // const navigate = useNavigate()
+    const handleClick = () => {
+        navigate(`/shop/${index}`)
     }
     return (
         <div>
@@ -69,7 +75,7 @@ const BookDetails = () => {
                         <div className='flex lg:items-center lg:gap-5 flex-col lg:flex-row '>
                             <div className='flex gap-2 h-min items-center'>
                                 <span className='bg-[#f0f0f0] py-2 px-3 text-xl cursor-pointer' onClick={() => setCount(count - 1)}><AiOutlineMinus /></span>
-                                <span className='bg-[#ffffff] py-2 px-3 text-xl font-semibold'>{ count}</span>
+                                <span className='bg-[#ffffff] py-2 px-3 text-xl font-semibold'>{count}</span>
                                 <span className='bg-[#f0f0f0] py-2 px-3 text-xl cursor-pointer' onClick={() => setCount(count + 1)}><AiOutlinePlus /></span>
                             </div>
                             <div>
@@ -107,6 +113,10 @@ const BookDetails = () => {
                     ))}
                 </div>
             </section>
+            <div>
+                <p>svdhshfsfhfhsfdhsf</p>
+                <button onClick={()=>handleClick()}>onClick</button>
+            </div>
             <section>
                 <Footer />
             </section>

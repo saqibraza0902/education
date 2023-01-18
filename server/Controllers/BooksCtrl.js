@@ -13,7 +13,7 @@ const BooksCtrl = {
             const total = await Book.countDocuments({});
             const book = await Book.find().sort({ _id: -1 }).limit(PAGE_SIZE).skip(PAGE_SIZE * page)
             const totalPage = Math.ceil(total / PAGE_SIZE)
-            return res.status(200).send({ book, totalPage })
+            return res.status(200).send({ book, totalPage, page })
         } catch (error) {
             return res.status(500).json({ error })
         }

@@ -26,10 +26,11 @@ const Shop = () => {
             }
         }
         getBooks()
-        navigate(`/shop/${pageNumber + 1}`)
+        navigate(`/shop/${pageNumber? pageNumber + 1: 0+1}`)
     }, [dispatch, pageNumber, navigate])
     const toDetailComponent = (_id, item) => {
-        navigate(`/book/${pageNumber + 1}/${_id}`, { state: { item } })
+        navigate(`/shop/${pageNumber + 1}/${_id}`, { state: { item, pageNumber } })
+        console.log(pageNumber)
     }
     const handlePageNum = (pageIndex) => {
         setPageNumber(pageIndex)
