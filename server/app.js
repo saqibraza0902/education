@@ -16,6 +16,7 @@ app.use('/book', require('./Routes/BookRoute'))
 app.use('/events', require('./Routes/EventsRoutes'))
 app.use('/faqs', require('./Routes/FaqsRoutes'))
 app.use('/courses', require('./Routes/CoursesRoute'))
+app.use('/instructor', require('./Routes/InstructorRoutes'))
 const PORT = process.env.PORT
 
 app.listen(PORT, () => {

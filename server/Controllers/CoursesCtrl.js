@@ -12,7 +12,7 @@ const CoursesCtrl = {
             const PAGE_SIZE = 8
             const page = parseInt(req.query.page || 0);
             const total = await Courses.countDocuments({});
-            const course = await Courses.find().sort({ _id: -1 }).limit(PAGE_SIZE).skip(PAGE_SIZE * page)
+            const course = await Courses.find().populate("advisor").sort({ _id: -1 }).limit(PAGE_SIZE).skip(PAGE_SIZE * page)
             const totalPage = Math.ceil(total / PAGE_SIZE)
             return res.status(200).send({ course, totalPage })
         } catch (error) {

@@ -13,8 +13,8 @@ const CoursesDetails = () => {
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
     const [message, setMessage] = useState("")
-    const { courseTitle, speaker, date, month, StartTime, EndTime, description, image } = location.state.item
-
+    const { courseTitle, advisor, date, month, StartTime, EndTime, description, image, category, lectures } = location.state.item
+    console.log(location.state.item)
     const Categories = [
         {
             category: "Business Studies",
@@ -63,22 +63,22 @@ const CoursesDetails = () => {
                         <div className='border-b mt-3'>
                             <h1 className='text-[#002147] transition-all duration-500 cursor-pointer w-max hover:text-[#fdc800] font-bold text-xl'>{courseTitle}</h1>
                         </div>
-                        <ul className="nav nav-tabs flex flex-col md:flex-row !border-none gap-5  !m-0 py-2" id="tabs-tab" role="tablist">
+                        <ul className="nav nav-tabs flex md:flex-col flex-row !border-none gap-3 md:gap-5  !m-0 py-2" id="tabs-tab" role="tablist">
                             <li className="nav-item p-0 m-0" role="presentation">
-                                <a href="#tabs-home" className="nav-link active px-0" id="tabs-home-tab" data-bs-toggle="pill" data-bs-target="#tabs-home" role="tab" aria-controls="tabs-home"
+                                <a href="#tabs-home" className="nav-link active p-0" id="tabs-home-tab" data-bs-toggle="pill" data-bs-target="#tabs-home" role="tab" aria-controls="tabs-home"
                                     aria-selected="true">Overview</a>
                             </li>
-                            <li className="nav-item" role="presentation">
-                                <a href="#tabs-profile" className="nav-link px-0" id="tabs-profile-tab" data-bs-toggle="pill" data-bs-target="#tabs-profile" role="tab"
+                            <li className="nav-item p-0 m-0" role="presentation">
+                                <a href="#tabs-profile" className="nav-link p-0" id="tabs-profile-tab" data-bs-toggle="pill" data-bs-target="#tabs-profile" role="tab"
                                     aria-controls="tabs-profile" aria-selected="false">Curriculum</a>
                             </li>
-                            <li className="nav-item" role="presentation">
-                                <a href="#tabs-profile" className="nav-link px-0" id="tabs-messages-tab" data-bs-toggle="pill" data-bs-target="#tabs-messages" role="tab"
+                            <li className="nav-item p-0 m-0" role="presentation">
+                                <a href="#tabs-profile" className="nav-link p-0" id="tabs-messages-tab" data-bs-toggle="pill" data-bs-target="#tabs-messages" role="tab"
                                     aria-controls="tabs-messages" aria-selected="false">Advisor</a>
                             </li>
-                            <li className="nav-item" role="presentation">
-                                <a href="#tabs-profile" className="nav-link px-0" id="tabs-contact-tab" data-bs-toggle="pill" data-bs-target="#tabs-contact" role="tab"
-                                    aria-controls="tabs-contact" aria-selected="false">Advisor</a>
+                            <li className="nav-item p-0 m-0" role="presentation">
+                                <a href="#tabs-profile" className="nav-link p-0" id="tabs-contact-tab" data-bs-toggle="pill" data-bs-target="#tabs-contact" role="tab"
+                                    aria-controls="tabs-contact" aria-selected="false">Reviews</a>
                             </li>
                         </ul>
                         <div class="tab-content" id="tabs-tabContent">
@@ -90,11 +90,11 @@ const CoursesDetails = () => {
                                     <div className='flex justify-between'>
                                         <div>
                                             <span className='text-[#8a8a8a]'>Advisor : </span>
-                                            <span className='text-[#002147] ml-1'>Alexander Alex</span>
+                                            <span className='text-[#002147] ml-1'>{advisor.name}</span>
                                         </div>
                                         <div>
                                             <span className='text-[#8a8a8a]'>Category : </span>
-                                            <span className='text-[#002147] ml-1'>Graphics Design</span>
+                                            <span className='text-[#002147] ml-1'>{category}</span>
                                         </div>
                                     </div>
                                     <div className='flex justify-between'>
@@ -104,7 +104,7 @@ const CoursesDetails = () => {
                                         </div>
                                         <div className='text-start'>
                                             <span className='text-[#8a8a8a]'>Lectures : </span>
-                                            <span className='text-[#002147] ml-1'>20</span>
+                                            <span className='text-[#002147] ml-1'>{lectures}</span>
                                         </div>
                                     </div>
                                     <div className='flex justify-between'>
@@ -118,11 +118,18 @@ const CoursesDetails = () => {
                             <div class="tab-pane fade" id="tabs-profile" role="tabpanel" aria-labelledby="tabs-profile-tab">
                                 Tab 2 content
                             </div>
-                            <div class="tab-pane fade" id="tabs-messages" role="tabpanel" aria-labelledby="tabs-profile-tab">
-                                Tab 3 content
+                            <div className="tab-pane fade w-full" id="tabs-messages" role="tabpanel" aria-labelledby="tabs-profile-tab">
+                                <div className='flex flex-col md:flex-row w-full pt-2'>
+                                    <img src={advisor.image} />
+                                    <div className='flex flex-col gap-2 pt-4 md:pl-4'>
+                                        <span className='text-[#444444] text-xl font-semibold'>{advisor.name}</span>
+                                        <span className='text-[#777777] text-xs font-medium'>{advisor.role}</span>
+                                        <p className='text-justify text-[#8a8a8a] text-sm'>{advisor.vision}</p>
+                                    </div>
+                                </div>
                             </div>
                             <div class="tab-pane fade" id="tabs-contact" role="tabpanel" aria-labelledby="tabs-contact-tab">
-                                Tab 4 content
+                                Reviews Content
                             </div>
                         </div>
 
@@ -186,7 +193,7 @@ const CoursesDetails = () => {
                     </div>
                 </div>
             </section>
-            
+
             <section>
                 <Footer />
             </section>
