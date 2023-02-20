@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const ImageSchema = mongoose.Schema({
+const BookSchema = mongoose.Schema({
     title: { type: String, required: true },
     writer: { type: String, required: true },
     price: { type: Number, required: true },
@@ -9,4 +9,4 @@ const ImageSchema = mongoose.Schema({
     image: { type: String, required: true },
 
 })
-module.exports = ImageModel = mongoose.model('user', ImageSchema)
+module.exports = BookModel = mongoose.model('book', BookSchema)

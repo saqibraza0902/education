@@ -23,3 +23,10 @@ export const CoursesActions = (courses) => {
         payload: courses
     }
 }
+
+export const AddToCart = (item) => {
+    return {
+        type: 'PRODUCT',
+        payload: item
+    }
+}

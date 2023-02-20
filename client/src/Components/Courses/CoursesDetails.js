@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import Navbar from '../GlobalComponents/Navbar'
 import courses_bg from '../../Images/Banners/others_bg.jpg'
-import { Link, useLocation } from 'react-router-dom'
+import {  useLocation } from 'react-router-dom'
 import { AiOutlineDribbble, AiOutlineSearch, AiOutlineTwitter } from 'react-icons/ai'
 import { TiSocialGooglePlus, TiSocialPinterest } from 'react-icons/ti'
 import { FaFacebookF } from 'react-icons/fa'
-import { BsClock } from 'react-icons/bs'
+// import { BsClock } from 'react-icons/bs'
 import Footer from '../GlobalComponents/Footer'
 const CoursesDetails = () => {
     const location = useLocation()
@@ -13,7 +13,7 @@ const CoursesDetails = () => {
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
     const [message, setMessage] = useState("")
-    const { courseTitle, advisor, date, month, StartTime, EndTime, description, image, category, lectures } = location.state.item
+    const { courseTitle, advisor,  description, image, category, lectures } = location.state.item
     console.log(location.state.item)
     const Categories = [
         {
@@ -81,8 +81,8 @@ const CoursesDetails = () => {
                                     aria-controls="tabs-contact" aria-selected="false">Reviews</a>
                             </li>
                         </ul>
-                        <div class="tab-content" id="tabs-tabContent">
-                            <div class="tab-pane fade show active" id="tabs-home" role="tabpanel" aria-labelledby="tabs-home-tab">
+                        <div className="tab-content" id="tabs-tabContent">
+                            <div className="tab-pane fade show active" id="tabs-home" role="tabpanel" aria-labelledby="tabs-home-tab">
                                 <div className='border-b'>
                                     <p className='text-[#777777] leading-7 text-justify font-normal !font-sans '>{description}</p>
                                 </div>
@@ -115,12 +115,12 @@ const CoursesDetails = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div class="tab-pane fade" id="tabs-profile" role="tabpanel" aria-labelledby="tabs-profile-tab">
+                            <div className="tab-pane fade" id="tabs-profile" role="tabpanel" aria-labelledby="tabs-profile-tab">
                                 Tab 2 content
                             </div>
                             <div className="tab-pane fade w-full" id="tabs-messages" role="tabpanel" aria-labelledby="tabs-profile-tab">
                                 <div className='flex flex-col md:flex-row w-full pt-2'>
-                                    <img src={advisor.image} />
+                                    <img src={advisor.image} alt='' />
                                     <div className='flex flex-col gap-2 pt-4 md:pl-4'>
                                         <span className='text-[#444444] text-xl font-semibold'>{advisor.name}</span>
                                         <span className='text-[#777777] text-xs font-medium'>{advisor.role}</span>
@@ -128,7 +128,7 @@ const CoursesDetails = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div class="tab-pane fade" id="tabs-contact" role="tabpanel" aria-labelledby="tabs-contact-tab">
+                            <div className="tab-pane fade" id="tabs-contact" role="tabpanel" aria-labelledby="tabs-contact-tab">
                                 Reviews Content
                             </div>
                         </div>

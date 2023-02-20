@@ -1,6 +1,7 @@
 const initialState = {
     books: [],
-    feedBooks: []
+    feedBooks: [],
+    cartBooks: []
 }
 const BooksReducer = (state = initialState, action) => {
     switch (action.type) {
@@ -11,6 +12,11 @@ const BooksReducer = (state = initialState, action) => {
         case 'FEED_BOOKS':
             return {
                 feedBooks: action.payload
+            }
+        case 'PRODUCT':
+            console.log(action.payload)
+            return {
+                cartBooks: action.payload
             }
         default:
             return {

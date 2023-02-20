@@ -2,29 +2,32 @@ import React, { useEffect, useState } from 'react'
 import Footer from '../GlobalComponents/Footer'
 import Navbar from '../GlobalComponents/Navbar'
 import courses_bg from '../../Images/Banners/others_bg.jpg'
-import { Link, useLocation, useParams } from 'react-router-dom'
+import { useLocation, useParams } from 'react-router-dom'
 import { RatingStar } from "rating-star";
 import { AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { FeedBookActions } from '../../Redux/Actions/Actions'
 import api from '../../AxiosInstance/api'
+import { AddToCart } from '../../Redux/Actions/Actions'
 
 const BookDetails = () => {
     const navigate = useNavigate()
     const location = useLocation()
     const dispatch = useDispatch()
     const AllBooks = useSelector(state => state.book.feedBooks)
+    const cartProducts = useSelector(state => state.book.cartBooks)
     const [count, setCount] = useState(0)
     const { title, writer, price, desc, rating, image } = location.state.item
+    const item = location.state.item
     const { index } = useParams()
-    
-    console.log(index)
+
+    console.log(cartProducts)
     useEffect(() => {
         const getBooks = async () => {
             try {
                 const { data } = await api.get("/book/feed-books")
-                console.log(data)
+                // console.log(data)
                 dispatch(FeedBookActions(data))
             } catch (error) {
                 console.log(error)
@@ -38,6 +41,10 @@ const BookDetails = () => {
     // const navigate = useNavigate()
     const handleClick = () => {
         navigate(`/shop/${index}`)
+    }
+
+    const AddtoCart = (item) => {
+        dispatch(AddToCart(item))
     }
     return (
         <div>
@@ -79,7 +86,7 @@ const BookDetails = () => {
                                 <span className='bg-[#f0f0f0] py-2 px-3 text-xl cursor-pointer' onClick={() => setCount(count + 1)}><AiOutlinePlus /></span>
                             </div>
                             <div>
-                                <button className='my-4 w-36 px-4 py-2 bg-[#002147] text-[#fdc800] font-semibold'>Add to Cart</button>
+                                <button className='my-4 w-36 px-4 py-2 bg-[#002147] text-[#fdc800] font-semibold' onClick={() => AddtoCart(item)}>Add to Cart</button>
                             </div>
                         </div>
                     </div>
@@ -115,7 +122,7 @@ const BookDetails = () => {
             </section>
             <div>
                 <p>svdhshfsfhfhsfdhsf</p>
-                <button onClick={()=>handleClick()}>onClick</button>
+                <button onClick={() => handleClick()}>onClick</button>
             </div>
             <section>
                 <Footer />
