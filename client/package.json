@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@mui/material": "^5.11.10",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -12,7 +13,7 @@
     "daisyui": "^2.31.0",
     "flowbite": "^1.5.3",
     "flowbite-react": "^0.2.0",
-    "framer-motion": "^7.5.3",
+    "framer-motion": "^7.10.3",
     "rating-star": "^1.1.0",
     "react": "^18.2.0",
     "react-bootstrap": "^2.5.0",
@@ -29,7 +30,6 @@
     "redux": "^4.2.0",
     "slick-carousel": "^1.8.1",
     "styled-components": "^5.3.6",
-    "velocity-react": "^1.4.3",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

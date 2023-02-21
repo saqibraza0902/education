@@ -19,7 +19,10 @@ const BookDetails = () => {
     const cartProducts = useSelector(state => state.book.cartBooks)
     const [count, setCount] = useState(0)
     const { title, writer, price, desc, rating, image } = location.state.item
-    const item = location.state.item
+    const item = {
+        title, writer, price, desc, rating, image,
+        count
+    }
     const { index } = useParams()
 
     console.log(cartProducts)
@@ -44,6 +47,7 @@ const BookDetails = () => {
     }
 
     const AddtoCart = (item) => {
+
         dispatch(AddToCart(item))
     }
     return (

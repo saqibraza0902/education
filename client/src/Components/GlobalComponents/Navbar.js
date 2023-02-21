@@ -8,6 +8,9 @@ import { FaPinterestP } from 'react-icons/fa'
 import { BsCart2 } from 'react-icons/bs'
 import logo from '../../Images/Logo/logo.png'
 import { Link } from 'react-router-dom'
+import CartDrawer from './CartSideBar'
+import Sidebar from './CartSideBar'
+import CartSideBar from './CartSideBar'
 
 const Navbar = () => {
     const [show, setShow] = useState(false)
@@ -62,7 +65,7 @@ const Navbar = () => {
                         <li><Link className='text-decoration-none text-black' to="/faqs">FAQ's</Link></li>
                     </ul>
                     <div className='relative'>
-                        <i><BsCart2 /></i>
+                        <i>hii<CartSideBar /></i>
                         <span className='absolute top-[-10px] left-[-10px] text-[10px] text-white  bg-red-600 px-1 rounded-full'>0</span>
                     </div>
                 </div>
